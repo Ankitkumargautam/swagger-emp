@@ -60,22 +60,35 @@ router.get('/', getEmpData);
  * @swagger
  * /emp:
  *   post:
+ *     tags: ["Employee"]
  *     summary: Create a new employee
- *     tags: [Employee]
- *     basePath: '../'
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         application/x-www-form-urlencoded:
  *           schema:
- *             $ref: 'models/emp.js'
+ *             type: object
+ *             properties:
+ *               empno:
+ *                 type: number
+ *               ename:
+ *                 type: string
+ *               job:
+ *                 type: string
+ *               hiredate:
+ *                 type: string
+ *               salary:
+ *                 type: string
+ *             required:
+ *               -empno
+ *               -ename
+ *               -job
+ *               -hiredate
  *     responses:
- *       200:
+ *       201:
  *         description: Employee was successfully created
- *         content:
- *           application/json:
- *             schema:
- *               $ref: 'models/emp.js'
+ *       400:
+ *         description: fail
  *       500:
  *         description: Some server error
  */
