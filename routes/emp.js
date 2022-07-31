@@ -154,6 +154,28 @@ router.post('/', createEmpData);
  */
 
 router.patch('/:id', updateEmpData);
+
+/**
+ * @swagger
+ * /emp/{id}:
+ *   delete:
+ *     tags: ["Employee"]
+ *     summary: delete an employee
+ *     description: Api used to delete an employee registed in company
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         type: string
+ *         required: true
+ *         description: The employee id
+ *     responses:
+ *       200:
+ *         description: success
+ *       400:
+ *         description: fail
+ *
+ */
+
 router.delete('/:id', deleteEmpData);
 
 export default router;
