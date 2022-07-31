@@ -54,6 +54,21 @@ const router = express.Router();
  *   description: Employee managing API
  */
 
+/**
+ * @swagger
+ * /emp:
+ *   get:
+ *     tags: ["Employee"]
+ *     summary: Get all employee
+ *     description: Api used to gell all employee registed in company
+ *     responses:
+ *       200:
+ *         description: success
+ *       400:
+ *         description: fail
+ *
+ */
+
 router.get('/', getEmpData);
 
 /**
