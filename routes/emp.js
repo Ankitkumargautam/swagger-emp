@@ -5,6 +5,7 @@ import {
   updateEmpData,
   deleteEmpData,
 } from '../controllers/emp.js';
+import CategoryModel from '../models/category.js';
 
 const router = express.Router();
 
@@ -177,5 +178,15 @@ router.patch('/:id', updateEmpData);
  */
 
 router.delete('/:id', deleteEmpData);
+
+router.get('/category', async (req, res) => {
+  try {
+    const data = await CategoryModel.find();
+    console.log(data);
+    res.send(data);
+  } catch (error) {
+    console.log('server error');
+  }
+});
 
 export default router;
