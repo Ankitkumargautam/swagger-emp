@@ -109,6 +109,50 @@ router.get('/', getEmpData);
  */
 
 router.post('/', createEmpData);
+
+/**
+ * @swagger
+ * /emp/{id}:
+ *   patch:
+ *     tags: ["Employee"]
+ *     summary: update an employee
+ *     description: Api used to update an employee registed in company
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         type: string
+ *         required: true
+ *         description: The employee id
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/x-www-form-urlencoded:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               empno:
+ *                 type: number
+ *               ename:
+ *                 type: string
+ *               job:
+ *                 type: string
+ *               hiredate:
+ *                 type: string
+ *               salary:
+ *                 type: string
+ *             required:
+ *               -empno
+ *               -ename
+ *               -job
+ *               -hiredate
+ *     responses:
+ *       200:
+ *         description: success
+ *       400:
+ *         description: fail
+ *
+ */
+
 router.patch('/:id', updateEmpData);
 router.delete('/:id', deleteEmpData);
 
